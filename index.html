@@ -19,6 +19,10 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: var(--white);
       color: var(--black);
@@ -33,17 +37,30 @@
     }
 
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       display: flex;
       justify-content: center;
       gap: 20px;
       background: var(--rose-gold);
       padding: 10px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
     nav a {
       color: var(--white);
       text-decoration: none;
       font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a.active {
+      text-decoration: underline;
+      color: var(--black);
+      background: var(--white);
     }
 
     section {
@@ -112,6 +129,7 @@
       font-weight: bold;
       display: inline-block;
       margin-top: 1rem;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -134,76 +152,4 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="home">
-    <h2>Welcome to Luxe Modern Decor</h2>
-    <p>Discover curated pieces that blend luxury and modern style. From chic furniture to elegant accents, we help you transform your space into something truly extraordinary.</p>
-  </section>
-
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Luxe Modern Decor was founded with a passion for style and sophistication. We provide handpicked home decor pieces that complement a contemporary lifestyle, using only premium materials and timeless design.</p>
-  </section>
-
-  <section id="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>Home decor product sales</li>
-      <li>Interior styling consultation</li>
-      <li>Gift curation for homes and events</li>
-    </ul>
-  </section>
-
-  <section id="reviews">
-    <h2>Customer Reviews</h2>
-    <p><strong>Emily R.</strong> — "Absolutely stunning pieces! My living room has never looked better."</p>
-    <p><strong>Jason T.</strong> — "Professional and elegant. Luxe Modern Decor exceeded my expectations!"</p>
-  </section>
-
-  <section id="shop">
-    <h2>Shop Our Collection</h2>
-    <div class="product-grid">
-      <div class="product">
-        <img src="https://via.placeholder.com/300x300.png?text=Vase" alt="Luxury Vase">
-        <h3>Rose Gold Vase</h3>
-        <p>$49.00</p>
-        <button class="snipcart-add-item btn"
-          data-item-id="vase001"
-          data-item-price="49.00"
-          data-item-url="/"
-          data-item-name="Rose Gold Vase">
-          Add to Cart
-        </button>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/300x300.png?text=Candle" alt="Scented Candle">
-        <h3>Scented Candle</h3>
-        <p>$29.00</p>
-        <button class="snipcart-add-item btn"
-          data-item-id="candle001"
-          data-item-price="29.00"
-          data-item-url="/"
-          data-item-name="Scented Candle">
-          Add to Cart
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Luxe Modern Decor. All rights reserved.</p>
-  </footer>
-
-  <div hidden id="snipcart" data-api-key="YOUR_PUBLIC_API_KEY"></div>
-  <script src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
-</body>
-</html>
+  <
