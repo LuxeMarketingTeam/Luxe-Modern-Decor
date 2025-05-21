@@ -1,1 +1,155 @@
 # Luxe-Modern-Decor
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxe Modern Decor</title>
+    <style>
+      :root {
+        --rose-gold: #b76e79;
+        --white: #ffffff;
+        --black: #000000;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        background-color: var(--white);
+        color: var(--black);
+        line-height: 1.6;
+      }
+
+      header {
+        background: var(--black);
+        color: var(--rose-gold);
+        padding: 20px;
+        text-align: center;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        background: var(--rose-gold);
+        padding: 10px 0;
+      }
+
+      nav a {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      section {
+        padding: 40px 20px;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1,
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .contact-form button {
+        background: var(--rose-gold);
+        color: var(--white);
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      footer {
+        background: var(--black);
+        color: var(--white);
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Luxe Modern Decor</h1>
+      <p>Elegant home decor for modern living</p>
+    </header>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+      <h2>Welcome to Luxe Modern Decor</h2>
+      <p>
+        Discover curated pieces that blend luxury and modern style. From chic
+        furniture to elegant accents, we help you transform your space into
+        something truly extraordinary.
+      </p>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        Luxe Modern Decor was founded with a passion for style and
+        sophistication. We provide handpicked home decor pieces that complement
+        a contemporary lifestyle, using only premium materials and timeless
+        design.
+      </p>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Home decor product sales</li>
+        <li>Interior styling consultation</li>
+        <li>Gift curation for homes and events</li>
+      </ul>
+    </section>
+
+    <section id="reviews">
+      <h2>Customer Reviews</h2>
+      <p>
+        <strong>Emily R.</strong> — "Absolutely stunning pieces! My living room
+        has never looked better."
+      </p>
+      <p>
+        <strong>Jason T.</strong> — "Professional and elegant. Luxe Modern Decor
+        exceeded my expectations!"
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Luxe Modern Decor. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
