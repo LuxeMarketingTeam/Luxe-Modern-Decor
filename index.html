@@ -19,6 +19,10 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: var(--white);
       color: var(--black);
@@ -33,17 +37,30 @@
     }
 
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       display: flex;
       justify-content: center;
       gap: 20px;
       background: var(--rose-gold);
       padding: 10px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
     nav a {
       color: var(--white);
       text-decoration: none;
       font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a.active {
+      text-decoration: underline;
+      color: var(--black);
+      background: var(--white);
     }
 
     section {
@@ -129,15 +146,17 @@
     <h2>Shop</h2>
     <div class="product-grid">
       <div class="product-card">
-        <img src="/mnt/data/Screenshot 2025-05-21 005517.png" alt="Airtight Food Storage Containers">
+        <img src="/mnt/data/Screenshot 2025-05-21 005517.png" alt="Airtight Food Storage Containers" />
         <h3>Airtight Food Storage Containers</h3>
         <p>$9.99</p>
-        <button class="snipcart-add-item"
+        <button
+          class="snipcart-add-item"
           data-item-id="storage-containers"
           data-item-name="Airtight Food Storage Containers"
           data-item-price="9.99"
           data-item-url="/"
-          data-item-description="24 pcs Kitchen and Pantry Canisters with Lids, BPA Free, Includes Labels">
+          data-item-description="24 pcs Kitchen and Pantry Canisters with Lids, BPA Free, Includes Labels"
+        >
           Add to Cart
         </button>
       </div>
@@ -146,7 +165,9 @@
 
   <section id="about">
     <h2>About Us</h2>
-    <p>Luxe Modern Decor was founded with a passion for style and sophistication. We provide handpicked home decor pieces that complement a contemporary lifestyle, using only premium materials and timeless design.</p>
+    <p>
+      Luxe Modern Decor was founded with a passion for style and sophistication. We provide handpicked home decor pieces that complement a contemporary lifestyle, using only premium materials and timeless design.
+    </p>
   </section>
 
   <section id="services">
@@ -180,5 +201,28 @@
 
   <script src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
   <div hidden id="snipcart" data-api-key="YOUR_PUBLIC_API_KEY"></div>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 60;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
